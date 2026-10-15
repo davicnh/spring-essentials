@@ -19,7 +19,7 @@ public class Workouts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
-    private String description;
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "student_id")
