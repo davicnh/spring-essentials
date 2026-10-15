@@ -22,10 +22,10 @@ public class Student {
     @Column(unique = true)
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "assesstment_id")
     private Assesstment assesstment;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
     private Set<Workouts> workouts = new HashSet<>();
 }
